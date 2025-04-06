@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>c
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Book Mangagement</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Book List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/showBookForm">Add Book</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-4">
+    <h2>Save Book</h2>
+
+    <!-- Employee Form -->
+    <form action="#" th:action="@{/saveBook}" th:object="${book}" method="POST" onsubmit="return validateForm()">
+
+        <!-- First Name -->
+        <div class="form-group">
+            <label for="name">Book Name</label>
+            <input type="text" th:field="*{name}" id="firstName" placeholder="Book Name" class="form-control mb-4 col-4">
+        </div>
+
+        <!-- Last Name -->
+        <div class="form-group">
+            <label for="price">Employee Last Name</label>
+            <input type="text" th:field="*{price}" id="lastName" placeholder="Book Price" class="form-control mb-4 col-4">
+        </div>
+
+
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-info col-2">Save Book</button>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer class="text-center py-4">
+    <p>© 2025 Employee Management System</p>
+</footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Form Validation Script -->
+<script>
+    function validateForm() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+
+
+        if (firstName === "" || lastName === "" || email === "") {
+            alert("Please fill in all fields.");
+            return false;
+        }
+
+
+
+        return true;
+    }
+</script>
+
+</body>
+</html>
